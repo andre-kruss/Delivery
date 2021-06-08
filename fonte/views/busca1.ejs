@@ -1,0 +1,158 @@
+<%- include ('../partials/header.ejs') %>
+
+    <body>
+
+        <%- include ('../partials/navbarPadrao.ejs') %>
+
+        <main>
+            <div class="hero_single version_1">
+                <div class="opacity-mask">
+                    <div class="container">
+                        <div class="row justify-content-lg-start justify-content-md-center">
+                            <div class="col-xl-6 col-lg-8">
+                                <h1>Peça já!</h1>
+                                <!-- <p>Os melhores restaurantes pelo melhor preço</p> -->
+                                <p>Encontre seu restaurante</p>
+                                <form method="post" action="grid-listing-filterscol.html">
+                                    <div class="row no-gutters custom-search-input">
+                                        <div class="col-lg-10">
+                                            <div class="form-group">
+                                                <input class="form-control no_border_r" type="text" id="autocomplete"
+                                                    placeholder="Digite o nome do restaurante">
+                                                <!-- <input class="form-control no_border_r" type="text" id="autocomplete" placeholder="Busca por restaurante"> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <button class="btn_1 gradient" type="submit">Buscar</button>
+                                        </div>
+                                    </div>
+                                    <!-- /row -->
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /row -->
+                    </div>
+                </div>
+                <div class="wave hero"></div>
+            </div>
+            <!-- /hero_single -->
+
+            <div class="container margin_30_60">
+                <div class="main_title center">
+                    <span><em></em></span>
+                    <h2>Restaurantes parceiros</h2>
+                </div>
+                <!-- /main_title -->
+
+
+                <div class="owl-carousel owl-theme categories_carousel">
+
+                    <div class="item_version_2">
+                        <a href="/Loja-Teste">
+                            <figure>
+                                <img src="http://deliverypdv1.hospedagemdesites.ws/imagens/logo/logo_10.jpg"
+                                    data-src="http://deliverypdv1.hospedagemdesites.ws/imagens/logo/logo_10.jpg" alt=""
+                                    class="owl-lazy" width="350" height="450">
+                                <div class="info">
+                                    <h3>Nome Restaurante</h3>
+                                </div>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <!-- /carousel -->
+
+                <span><em></em></span>
+
+            </div>
+            <!-- /container -->
+
+            <div class="main_title center">
+                <span><em></em></span>
+                
+            </div>
+
+            <div class="shape_element_2">
+                <div class="container margin_60_0">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="box_how">
+                                        <figure><img src="img/how_11.png"
+                                                data-src="img/how_1_150.png" alt="" width="150" height="167" class="lazy">
+                                        </figure>
+                                        <h3>Pedido fácil</h3>
+                                        <p>Com o app Delivery da PDVSeven, você faz seu pedido facilmente e com toda segurança!</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-5 align-self-center">
+                                    <div class="box_how">
+                                        <figure><img src="img/lazy-placeholder-100-100-white.png"
+                                                data-src="img/how_3.svg" alt="" width="150" height="132" class="lazy">
+                                        </figure>
+                                        <h3>Aproveite!</h3>
+                                        <p>Você faz seu pedido no conforto de casa, recebe é só aproveitar!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- <p class="text-center mt-3 d-block d-lg-none"><a href="#0" class="btn_1 medium gradient pulse_bt mt-2">Register Now!</a></p> -->
+                        </div>
+                        <div  class="col-lg-5">
+                            <div id="register">                                
+                                <h3>Registre-se</h3>                                
+                                <aside>
+                                    <div class="divider"></div>
+                                    <form autocomplete="off">
+                                        <div class="form-group">
+                                            <input class="form-control" type="email" placeholder="Email">
+                                            <i class="icon_mail_alt"></i>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" type="password" id="Senha" placeholder="Senha">
+                                            <i class="icon_lock_alt"></i>
+                                        </div>
+                                        <div class="clearfix add_bottom_15">
+                                            <div class="checkboxes float-left">
+                                                <label class="container_check">Lembrar
+                                                  <input type="checkbox">
+                                                  <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <div class="float-right"><a id="forgot" href="#0">Esqueceu a senha?</a></div>
+                                        </div>
+                                        <a href="#0" class="btn_1 gradient full-width">Fazer Login</a>
+                                        <div class="text-center mt-2"><small>Não tem uma conta? <strong><a href="/registrar">Cadastre-se</a></strong></small></div>
+                                    </form>
+                                </aside>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-5 offset-lg-1 align-self-center">
+                        <div class="intro_txt">
+                            <div class="main_title">
+                                <span><em></em></span>
+                                <h2>Start Ordering Now</h2>
+                            </div>
+                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet libero id nisi euismod, sed porta est consectetur deserunt.</p>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <p><a href="#0" class="btn_1 medium gradient pulse_bt mt-2">Register</a></p>
+                        </div>
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- /shape_element_2 -->
+
+        </main>
+        <!-- /main -->
+
+
+        <div id="toTop"></div><!-- Back to top button -->
+
+
+    </body>
+
+<%- include ('../partials/footer.ejs') %>

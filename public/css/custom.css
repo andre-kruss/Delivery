@@ -1,0 +1,250 @@
+/*============================================================================================*/
+/* Your custom styles below */
+/*============================================================================================*/
+
+/* ==================================== */
+/* Páginda de Busca */
+/* ==================================== */
+.logos {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: minmax(130px, auto);
+
+}
+.logo {
+    height: 115px;
+    padding: 10px;
+}
+
+
+/* ==================================== */
+/* Páginda do restaurante */
+/* ==================================== */
+/* INDEX */
+/* HEADER */
+@media (max-width: 991px){
+    header {
+    height: 50px;
+}
+    #banner {
+        height: 180px;
+    }
+    #nomeLoja {
+        position: absolute;
+    }
+    #localizacao {
+        display:none;
+    }
+    .verMapa {
+        display:none;
+    }
+    .verCarrinho {
+        display:none;
+    }
+}
+.menu-loja{
+    font-size: 1.5em;
+    font-weight: 550;
+    margin: -15px -15px 15px 20px;
+}
+/* /HEADER */
+
+/* MAIN */
+.containerMain {
+    display: grid;
+    grid-template-rows: 60px auto;
+    grid-template-columns: 56% 10px auto;
+    grid-template-areas: 
+        "gid-navcategoria gid-navcategoria gid-navcategoria"
+      "grid-categoria . grid-resumo";
+}
+@media (max-width: 900px) {
+    .containerMain {
+        display: block;
+        
+    }
+}
+/* CATEGORIA */
+.alinharDireita {
+    text-align: right;
+}
+.alinharCentro {
+    text-align: center;
+    border: #e54750 10px;
+    display: flex;
+}
+.categoria {
+    grid-area: grid-categoria;
+    justify-self: stretch;
+}
+.categoria{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+@media (max-width: 1001px) {
+    .categoria{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+.navCategoria {
+    background-color: whitesmoke;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: inline-block;
+    z-index: 1;
+    grid-area: grid-navcategoria;
+    justify-self: stretch;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.navCategoria::-webkit-scrollbar {
+    height: 5px;
+}
+.navCategoria::-webkit-scrollbar-track {
+    background-color: rgb(221, 221, 221);
+}
+.navCategoria::-webkit-scrollbar-thumb {
+    background-color: #f1b3b6;
+    width: 10px;
+}
+.navCategoria a {
+    font-size: 18px;
+    display: inline-block;
+    color:black ;
+    text-align: left;
+    padding: 5px 16px;
+    text-decoration: none;
+}
+.menuCategoria:hover{
+    background-color: #e54750;
+    border-radius: 4px;
+    color: white;
+}
+.menuCategoria:active{
+    background-color: #e54750;
+    border-radius: 4px;
+    color: white;
+}
+
+/* .categoria-fixa{
+    position: relative;
+    height: 515px;
+    grid-area: grid-navcategoria;
+    justify-self: stretch;
+    overflow: auto;
+    white-space: nowrap;
+} */
+/* .categoria-fixa a {
+    font-size: 18px;
+    display: inline-block;
+    color:black ;
+    text-align: left;
+    padding: 5px 16px;
+    text-decoration: none;
+} */
+/* PRODUTO */
+.linha-cardapio {
+    width: 100%;
+}
+.box {
+    height: 135px;
+}
+.modificacao {
+    padding: 20px;
+}
+.imagem-modificacao {
+    display: block;
+    width: 90%;
+    height: auto;
+    border-radius: 0.5em;
+}
+.modNome {
+    padding: 5px;
+}
+.modValor {
+    padding: 5px;
+}
+.modBtn {
+    padding: 5px;
+}
+.btn-fechar {
+    padding: 1px 2px !important;
+    border-radius: 4px;
+}
+/* MODIFICACAO */
+.imgModificacao {
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 500px){
+    .imgModificacao img{
+        height: 80%;
+        width: 80%;
+    }
+}
+.modificacao table{
+    width: 100%;
+}
+/* /MODIFICACAO */
+/* /PRODUTO */
+/* /CATEGORIA */
+/* RESUMO */
+.resumo {
+    grid-area: grid-resumo;
+    /* background-color: crimson; */
+    justify-self: stretch;
+}
+.resumo-pedido {
+    width: 350px;
+}
+/* /RESUMO */
+/* /MAIN */
+
+/* FOOTER */
+.telefone p {
+    margin: 0px 0px 5px;
+}
+/* /FOOTER */
+/* /MAIN */
+/* ------------------------------------------------------------------------------------------------------------ */
+
+/* PÁGINA DE PEDIDOS */
+.selecionarPedido {
+    position: relative;
+    justify-self: stretch;
+    padding: 10px;
+}
+.verPedidos {
+    padding-top: 30px;
+    position: relative;
+    justify-self: stretch;
+}
+.ou {
+    display: flex;
+    justify-content: center;
+}
+.btn-verTodos{
+    width: 140px;
+    height: 35px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* PÁGINA DE CADASTRO */
+.btn-cadastrar{
+    background-color: #e54750;
+    text-transform: uppercase;
+    color: white;
+}
+/* /PÁGINA DE CADASTRO */
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* PÁGINA DE ERRO */
+#error_page {
+    padding: 80px 0;
+    height: auto;
+}
+/* /PÁGINA DE ERRO */

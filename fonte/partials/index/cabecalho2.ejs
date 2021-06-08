@@ -1,0 +1,33 @@
+
+    <!-- CABEÇALHO DA PÁGINA -->
+    <div class="hero_in detail_page background-image cabecalho" id="banner">
+        <img src="/img/Loja/banner.jpg" class="background-image"><!-- Imagem 1400 x 790 -->
+
+        <div class="wrapper opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
+            <div class="container">
+                <div class="main_info">
+                    <div class="row">
+                         <div class="col-xl-4 col-lg-5 col-md-6">
+                            <!--ATENÇÃO!! -->
+                            <h1 id="nomeLoja">
+                                <%= loja.chaveIdentificacao.chave.split("-").join(" ") %>
+                            </h1> 
+                            <strong id="localizacao">Endereço</strong><br> <!-- Arrumar JS usurário!! -->
+
+                            <!--ATENÇÃO!! -->
+                            <a href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x47e66e1de36f4147:0xb6615b4092e0351f!2sAssistance+Publique+-+H%C3%B4pitaux+de+Paris+(AP-HP)+-+Si%C3%A8ge!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361"
+                                target="blank" class="verMapa">Ver Mapa</a>
+                        </div>
+                        <!-- <div class="col-xl-8 col-lg-7 col-md-6 verCarrinho">
+                            <div class="buttons clearfix">
+                                <a href="#0" class="btn_hero wishlist"><i class="icon_cart"></i>Carrinho</a>
+                            </div>
+                        </div> -->
+                    </div>
+                    <!-- /row -->
+                </div>
+                <!-- /main_info -->
+            </div>
+        </div>
+    </div>
+
