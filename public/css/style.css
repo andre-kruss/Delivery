@@ -3966,7 +3966,7 @@ header.black_nav .dropdown.user a:hover {
   height: 65px;
   top: -65px;
   left: 0;
-  background: url("../img/wave_white.svg");
+  /* background: url("../img/wave_white.svg"); */
   z-index: 99;
   animation: waves 20s linear infinite;
 }
