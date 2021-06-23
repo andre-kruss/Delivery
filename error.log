@@ -1,0 +1,1 @@
+{"level":"error","message":"Cannot read property 'links' of null","stack":"TypeError: Cannot read property 'links' of null\n    at C:\\Users\\PDV7\\Desktop\\Teste\\Cardapio\\fonte\\rotas\\loja.js:21:28\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)"}

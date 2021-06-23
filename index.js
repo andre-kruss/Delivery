@@ -1,10 +1,13 @@
+// const logger = require('./logger');
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const http = require("http");
 
 // Set .env for heroku
 require('dotenv').config({path: '.env'});
 const port = process.env.PORT || 3000;
+const portKing = process.env.PORTKING || 3000;
 
 // Set body-parser
 app.use(bodyParser.urlencoded({extended: false}));
@@ -22,7 +25,14 @@ app.set('view engine', 'ejs')
 const lojaRotas = require('./fonte/rotas/loja');
 app.use('/', lojaRotas);
 
-// Umbler TEST
+// KingHost TEST
 app.listen(port, () => {
-    console.log('Umbler listening on port %s', port);
+    console.log('KingHost listening on port %s', portKing);
 });
+
+http.createServer((req, res) => {
+    res.writeHead(200, {'Content-Type': 'text/plain'})
+    res.end('Hello Node')
+  }).listen(portKing)
+   
+console.log('Servidor rodando na porta: '+ portKing)
