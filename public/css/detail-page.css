@@ -544,8 +544,8 @@ a.menu_item:hover h3 {
   border-radius: 3px;
 }
 .table.cart-list td figure img {
-  width: 60px;
-  height: auto;
+  width: auto;
+  height: 60px;
 }
 @media (max-width: 767px) {
   .table.cart-list td figure {

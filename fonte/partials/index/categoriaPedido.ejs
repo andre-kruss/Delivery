@@ -1,20 +1,18 @@
 <div class="navCategoria" id="navCategoria">
-    <% n=1 %>
+  <% n=1 %>
     <% categorias.forEach(categoria=> { %>
-      <a href="#section-<%= n %>" class="menuCategoria"><%= categoria.nome %></a>
+      <a href="#section-<%= n %>" class="menuCategoria">
+        <%= categoria.nome %>
+      </a>
       <% n++ %>
     <% }) %>
 </div>
 
-
-
 <div class="bg_gray containerMain">
-
-  <img src="../../php/img.php" />
 
   <div class="bg_gray categoria">
     <!-- CATEGORIAS E PRODUTOS -->
-    <div class="container margin_detail ">
+    <div class="container margin_detail">
       <div class="row">
         <div class="list_menu">
           <div class="list_menu" id="nomeCategoria">
@@ -29,15 +27,17 @@
 
                       <!-- PRODUTO -->
                       <% produtos.forEach( produto=> { %>
-                        <% if(produto.categorias.includes(categoria._id)) { %>
-                          <tr>
-                            <td class=" d-md-flex align-items-center">
-                              
-                               
-                                  <img src="/img/menu-thumb-placeholder.jpg" alt="thumb" class="lazy">
-                                
-                              
-                              <div class="flex-md-column">
+                      <% imagemProduto = produto.linkImagem %>
+
+                        <% if(produto.categorias.includes(categoria._id)) { %>       
+                          <tr class="linha-cardapio">
+                            <td class="d-md-flex align-items-center box">
+                              <figure class="imagem-produto">     
+                                <img src="<%= imagemProduto %>" alt="thumb" class="lazy">                                
+                              </figure>
+                            </td>
+                            <td>
+                              <div class="flex-md-column align-items-center"">
                                 <h4>
                                   <%= produto.nome %>
                                 </h4>
@@ -55,7 +55,6 @@
                                 <a href="#" data-toggle="modal" data-target="#modal-<%= produto._id %>"
                                   class="modal-modificacao modal_dialog">
                                   <i class="arrow_carrot-right_alt2"></i>
-                                  <!-- <i class="icon_plus_alt2"></i> -->
                                 </a>
                               </div>
 
@@ -78,8 +77,8 @@
                                     <container class="none">
                                       <div class="modal-body">
 
-                                        <div class="imgModificacao"><img src="/img/home_cat_placeholder.jpg"
-                                            class="img-fuid"></div>
+                                        <div class="imgModificacao"><img src="<%= imagemProduto %>"
+                                            class="imagem-modificacao"></div>
                                         <br>
                                         <% m=1 %>
                                           <% produto.paineisModificacao.forEach( painel=> { %>
@@ -100,29 +99,34 @@
                                                     <td class="alinharDireita">
                                                       R$ <%= modificacao.valor %>
                                                     </td>
-                                                    <!-- <div class="modBtn col-md-2">
-                                                      <a href="#" data-toggle="modal"
-                                                        data-target="<%/*= modificacao._id */%>"><i
-                                                          class="icon_plus_alt2"></i></a>                                                      
-                                                    </div> -->
                                                   </tr>
                                                   <% m++ %>
 
-                                                  <% }) %>
+                                                    <% }) %>
                                               </table>
-
-
                                             </div>
 
-                                            <% }) %>
+                                          <% }) %>
 
                                       </div>
 
-                                      <div class="modal-footer">
-                                        <button type="button" class="btn_1 btn-fechar" data-dismiss="modal"
-                                        aria-label="Fechar">
-                                        Fechar
-                                      </button>
+                                      <!-- <div class="modal-footer"> -->
+                                        <div class="footer p-2">
+                                          <div class="row small-gutters">
+                                              <div class="col-md-3">
+                                                  <button type="reset" class="btn_1 outline full-width mb-mobile" data-dismiss="modal" aria-label="Fechar">Cancelar</button>
+                                              </div>
+                                              <div class="col-md-7">
+                                                  <button type="reset" class="btn_1 full-width">Adicionar</button>
+                                              </div>
+                                              <div class="col-md-2">
+                                                <div class="numbers-row">
+                                                  <input type="text" value="1" id="qty_1" class="qty2 form-control" name="quantity">
+                                              </div>
+                                              </div>
+                                          </div>
+                                          <!-- /Row -->
+                                      <!-- </div> -->
                                       </div>
 
                                     </container>
@@ -132,20 +136,42 @@
                             </td>
                           </tr>
 
-                          <% } %>
-                            <% }) %>
+                        <% } %>
+                      <% }) %>
                               <!-- FIM PRODUTO -->
-
                     </table>
                   </div>
                   <!-- /row -->
                 </section>
 
                 <% n++ %>
-                  <% }) %>
+              <% }) %>
           </div>
         </div>
       </div>
     </div>
   </div>
   <!-- Não fechar o div, dá treta-->
+
+  <!-- <script type="text/javascript">
+
+function is_img(file) {
+	var img = new Image();
+	img.src = file;
+	img.onload = function() {
+		console.log("A imagem " + file + " existe");
+	}
+	img.onerror = function() {
+		console.log("A imagem " + file + " NAO existe");
+	}
+}
+
+
+produtos.forEach(produto => {
+  is_img("<%= imagemProduto %>");
+});
+
+
+
+
+  </script> -->

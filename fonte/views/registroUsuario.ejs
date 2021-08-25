@@ -66,40 +66,72 @@
 						</div>
 						<!-- /head -->
 						<div class="main">
+						<form action="/user/create" method="POST">
 							<div class="form-group">
 								<label>Nome</label>
-								<input class="form-control" placeholder="Nome Completo" id="nomeUsuario">
+								<input class="form-control" name="nome" placeholder="Nome Completo" id="nomeUsuario">
+							</div>
+							<div class="form-group">
+								<label>Sexo</label><br>
+								<div class="row">
+									<label class="container_radio ml-3">Feminino
+										<input type="radio" name="type_d" value="fem">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio ml-3">Masculino
+										<input type="radio" name="type_d" value="masc">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio ml-3">Prefiro não informar
+										<input type="radio" name="type_d" checked="checked" value="s_sexo">
+										<span class="checkmark"></span>
+									</label>
+								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-7">
+								<div class="col-md-6">
 									<div class="form-group">
-										<label>Email</label>
-										<input class="form-control" placeholder="exemplo@email.com" id="emailUsuario">
+										<label>RG</label>
+										<input class="form-control" name="rg" type="number" placeholder="xx.xxx.xxx-xx" id="rgUsuario">
 									</div>
 								</div>
-								<div class="col-md-5">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>CPF</label>
+										<input class="form-control" name="cpf" type="number" placeholder="xxx.xxx.xxx-xx" id="cpfUsuario">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Email</label>
+										<input class="form-control" name="email" type="email" placeholder="exemplo@email.com" id="emailUsuario">
+									</div>
+								</div>
+								<div class="col-md-6">
 									<div class="form-group">
 										<label>Telefone</label>
-										<input class="form-control" placeholder="(XX) 99999-9999" id="telefoneUsuario">
+										<input class="form-control" name="telefone" type="tel" placeholder="(XX) 99999-9999" id="telefoneUsuario">
 									</div>
 								</div>
 							</div>
 							<br>
 							<div class="form-group">
 								<label>Endereço</label>
-								<input class="form-control" placeholder="Rua Exemplo" id="ruaUsuario">
+								<input class="form-control" name="endereco" type="text" placeholder="Rua Exemplo" id="ruaUsuario">
 							</div>
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Bairro: </label>
-										<input class="form-control" placeholder="Centro" id="bairroUsuario">
+										<input class="form-control" name="bairro" type="text" placeholder="Centro" id="bairroUsuario">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Número: </label>
-										<input class="form-control" placeholder="123" id="numEndUsuario">
+										<input class="form-control" name="num_endereco" type="number" placeholder="123" id="numEndUsuario">
 									</div>
 								</div>
 							</div>
@@ -107,7 +139,7 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<label>Referência</label>
-										<input class="form-control" placeholder="Em frente às quadras"
+										<input class="form-control" name="ref_endereco" type="text" placeholder="Em frente às quadras"
 											id="refEndUsuario">
 									</div>
 								</div>
@@ -116,31 +148,41 @@
 								<div class="col-md-4">
 									<div class="form-group">
 									  <label>Cidade</label>
-									  <input class="form-control" placeholder="Cidade" id="cidadeUsuario">
+									  <input class="form-control" name="cidade" type="text" placeholder="Cidade" id="cidadeUsuario">
 									</div>
 								  </div>
 								  <div class="col-md-4">
 									<div class="form-group">
 									  <label>UF</label>
-									  <input class="form-control" placeholder="SP" id="estadoUsuario">
+									  <input class="form-control" name="estado" type="text" placeholder="SP" id="estadoUsuario">
 									</div>
 								  </div>
 								  <div class="col-md-4">
 									<div class="form-group">
 									  <label>CEP</label>
-									  <input class="form-control" placeholder="00000-000" id="cepUsuario">
+									  <input class="form-control" name="cep" type="number" placeholder="00000-000" id="cepUsuario">
 									</div>
 								  </div>
 							</div>
+							<div class="col-md-8 mt-4">
+								<div class="form-group">
+									<label>Definir Senha</label>
+									<input class="form-control" type="password" placeholder="Senha">
+									<input class="form-control mt-3" name="senha" type="password" id="Senha" placeholder="Confirme sua senha">									
+								</div>
+							</div>
 							<div class="row">
-								<div class="col-md-12">
-									<div class="form-group">										
-										<button class="form-control btn-cadastrar" placeholder="Em frente às quadras" id="cadastroUsuário">Cadasdrar</button>
+								<div class="col-md-12 mt-4">
+									<div class="form-group btn-block">										
+										<button class="form-control btn-cadastrar" id="cadastroUsuário">Cadasdrar</button>
 									</div>
 								</div>
 							</div>
+							<br><br>
+							
 
 
+						</form>
 						</div>
 						<!-- /box_order_form -->
 					</div>

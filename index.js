@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const http = require("http");
+// const http = require("http");
 
 // Set .env for heroku
 require('dotenv').config({path: '.env'});
@@ -16,7 +16,6 @@ app.use(bodyParser.json());
 // Static files
 app.use(express.static('public'));
 
-
 // Templating engine engine
 app.set('views', './fonte/views');
 app.set('view engine', 'ejs')
@@ -26,13 +25,6 @@ const lojaRotas = require('./fonte/rotas/loja');
 app.use('/', lojaRotas);
 
 // KingHost TEST
-app.listen(port, () => {
+app.listen(portKing, () => {
     console.log('KingHost listening on port %s', portKing);
 });
-
-http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/plain'})
-    res.end('Hello Node')
-  }).listen(portKing)
-   
-console.log('Servidor rodando na porta: '+ portKing)

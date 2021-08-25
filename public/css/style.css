@@ -4246,7 +4246,7 @@ a.btn_1.medium,
 }
 a.btn_1.outline,
 .btn_1.outline {
-  border: 2px solid #111;
+  border: 2px solid rgb(201, 201, 201);
   color: #111;
   padding: 6px 15px;
   background: none;
