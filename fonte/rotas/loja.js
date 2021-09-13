@@ -49,6 +49,7 @@ lojaRotas.get('/:nomeLoja', async (req, res) => {
 
 lojaRotas.get('/pedido/:nomeLoja', async (req, res) => {
 
+
     try {
         const nomeLoja = req.params.nomeLoja;
 
@@ -92,6 +93,7 @@ lojaRotas.get('/', async (req, res) => {
     try {
         const [dadosLoja] = await Promise.all([axios.get(`https://ms-delivery-online.herokuapp.com/lojas/listarLojas`)]);
         const loja = dadosLoja.data;
+
         res.render("busca1", {loja: loja});
     } catch (error) {
         if (error.response) {
@@ -106,10 +108,16 @@ lojaRotas.get('/', async (req, res) => {
 });
 
 // USER ROUTES
-lojaRotas.get('/login', (req, res) => {
-    res.render('login');
+lojaRotas.get("/login", (req, res) => {
+    res.render("login");
 })
+
+lojaRotas.get("/rotateste", (req, res) => {
+    res.render("login")
+})
+
 lojaRotas.post("/user/create", (req, res) => {
+
     var nome = req.body.nome;
     var sexo = req.body.sexo;
     var email = req.body.email;

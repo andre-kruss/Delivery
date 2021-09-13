@@ -5,14 +5,14 @@
         <%- include ('../partials/navbarPadrao.ejs') %>
 
         <main>
-            <div class="hero_single version_1">
+            <div class="hero_single version_1 busca">
                 <div class="opacity-mask">
                     <div class="container">
                         <div class="row justify-content-lg-start justify-content-md-center">
                             <div class="col-xl-6 col-lg-8">
                                 <h1>Peça já!</h1>
-                                <!-- <p>Os melhores restaurantes pelo melhor preço</p> -->
                                 <p>Encontre seu restaurante</p>
+
                                 <form method="post" action="grid-listing-filterscol.html">
                                     <div class="row no-gutters custom-search-input">
                                         <div class="col-lg-10">
@@ -47,18 +47,22 @@
 
                 <div class="owl-carousel owl-theme categories_carousel">
 
-                    <div class="item_version_2">
-                        <a href="/Loja-Teste">
-                            <figure>
-                                <img src="http://deliverypdv1.hospedagemdesites.ws/imagens/logo/logo_10.jpg"
-                                    data-src="http://deliverypdv1.hospedagemdesites.ws/imagens/logo/logo_10.jpg" alt=""
-                                    class="owl-lazy" width="350" height="450">
-                                <div class="info">
-                                    <h3>Nome Restaurante</h3>
-                                </div>
-                            </figure>
-                        </a>
-                    </div>
+                    <% loja.forEach( loja => { %>
+                        <% if( loja.ativo ) {%> 
+                            <div class="item_version_2">
+                                <a href="http://pdv7.com.br/<%= loja.chaveFormatada[0] %>">
+                                    <figure>
+                                        <img src="https://pdvseven.com.br/delivery_imagens/logo_<%= loja._id %>.jpg"
+                                            alt="" class="owl-lazy img-logo" width="350" height="450">
+                                        <div class="info">
+                                            <h3><%= loja.chaveFormatada[0].split("-").join(" ") %></h3>
+                                        </div>
+                                    </figure>
+                                </a>
+                            </div>
+                        <% } %>
+                    <% }) %>
+
                 </div>
                 <!-- /carousel -->
 
@@ -71,6 +75,8 @@
                 <span><em></em></span>
                 
             </div>
+
+            <div class="teste">
 
             <div class="shape_element_2">
                 <div class="container margin_60_0">
@@ -102,11 +108,11 @@
                             <!-- <p class="text-center mt-3 d-block d-lg-none"><a href="#0" class="btn_1 medium gradient pulse_bt mt-2">Register Now!</a></p> -->
                         </div>
                         <div  class="col-lg-5">
-                            <div id="register">                                
-                                <h3>Registre-se</h3>                                
+                            <div id="register" class="registro-usuario">
+                                <h3>Registre-se</h3>
                                 <aside>
                                     <div class="divider"></div>
-                                    <form autocomplete="off">
+                                    <form autocomplete="off" class="p-2">
                                         <div class="form-group">
                                             <input class="form-control" type="email" placeholder="Email">
                                             <i class="icon_mail_alt"></i>
@@ -130,20 +136,11 @@
                                 </aside>
                             </div>
                         </div>
-                        <!-- <div class="col-lg-5 offset-lg-1 align-self-center">
-                        <div class="intro_txt">
-                            <div class="main_title">
-                                <span><em></em></span>
-                                <h2>Start Ordering Now</h2>
-                            </div>
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed imperdiet libero id nisi euismod, sed porta est consectetur deserunt.</p>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                            <p><a href="#0" class="btn_1 medium gradient pulse_bt mt-2">Register</a></p>
-                        </div>
-                    </div> -->
                     </div>
                 </div>
             </div>
+
+        </div>
             <!-- /shape_element_2 -->
 
         </main>

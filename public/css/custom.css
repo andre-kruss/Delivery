@@ -5,6 +5,12 @@
 /* ==================================== */
 /* Páginda de Busca */
 /* ==================================== */
+
+.busca {
+    height: 90vh;
+}
+
+
 .logos {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -16,12 +22,32 @@
     padding: 10px;
 }
 
+.img-logo {
+    border-radius: 5px;
+}
+
+.item_version_2 {
+    padding: 2px;
+    margin: 2px;
+}
+
+.teste {
+    height: 58vh;
+}
+
 
 /* ==================================== */
 /* Páginda do restaurante */
 /* ==================================== */
 /* INDEX */
 /* HEADER */
+
+.bg-banner {
+    float:left;
+  width:100%;
+ height: 100%;
+}
+
 @media (max-width: 991px){
     header {
     height: 50px;
@@ -65,6 +91,26 @@
     }
 }
 /* CATEGORIA */
+.cardapio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tamanho-cardapio {
+    max-width: 800px;
+}
+@media (min-width: 1200px){
+    .tamanho-cardapio {
+        width: 800px;
+    }
+}
+@media (max-width: 370){
+    .tamanho-cardapio {
+        width: 100%;
+    }
+}
+
 .alinharDireita {
     text-align: right;
 }
@@ -174,9 +220,74 @@
     border-radius: 4px;
 }
 /* MODIFICACAO */
+.painelModificacao {
+    width: 100%;
+    border-collapse: collapse;
+    border: .8px solid #d2d8dd;
+    border-radius: 25px;
+}
 .imgModificacao {
     display: flex;
     justify-content: center;
+}
+.adicionaModificacao {
+    position: relative;
+    width: 30%;
+    height: 35px;
+    border: 1.5px solid #d2d8dd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.adicionamodificacao input {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    left: 50%;
+    padding: 5px;
+    border: none;
+    margin-left: -20px;
+    font-weight: 500;
+    background: none;
+    font-size: 18px;
+    font-size: 1.125rem;
+}
+ .adicionamodificacao input:focus {
+    outline: none;
+    box-shadow: none;
+}
+.adicionamodificacao .button_inc {
+    cursor: pointer;
+    position: absolute;
+    width: 33px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    z-index: 2;
+    font-size: 28px;
+    font-size: 1.75rem;
+    font-weight: 300 !important;
+    color: #999;
+}
+  .adicionamodificacao .button_inc:hover {
+    color: #e54750;
+  }
+  .adicionamodificacao .dec,
+  .adicionamodificacao .inc {
+    top: 2px;
+  }
+  .adicionamodificacao .dec {
+    left: 0;
+  }
+  .adicionamodificacao .inc {
+    right: 0;
+  }
+.container_radio span{
+    color: #fff;
 }
 @media (max-width: 500px){
     .imgModificacao img{
@@ -248,3 +359,9 @@
     height: auto;
 }
 /* /PÁGINA DE ERRO */
+
+/* ----------------------------------------------------------------------------------------------------------- */
+
+/* PÁGINA DE LOGIN */
+
+/* /PÁGINA DE LOGIN */

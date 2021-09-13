@@ -158,9 +158,10 @@
   position: absolute;
   left: 0;
   top: 0;
-  overflow-y: auto;
+  overflow: hidden;
   background-color: #fff;
-  min-height: 100vh;
+  height: 420px;
+  margin: 5px;
 }
 #register figure {
   margin: 0;

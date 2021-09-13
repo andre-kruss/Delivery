@@ -47,7 +47,8 @@
                               </div>
                             </td>
                             <td class="alinharDireita">
-                              <strong>R$ <%= produto.valor1 %></strong>
+                              <% var valorProduto = (produto.valor2.toFixed(2) + "").replace(".", ",") %>
+                              <strong>R$ <%= valorProduto %></strong>
                             </td>
 
                             <td class="options">
@@ -89,21 +90,59 @@
                                                 <%= painel.nome %>
                                               </h5>
 
-                                              <table>
-                                                <% painel.modificacoes.forEach(modificacao=> { %>
+                                              <% if ( painel.min == 1 && painel.max == 1) { %>
+                                                <p>Selecione uma opção</p>
 
-                                                  <tr>
-                                                    <td>
-                                                      <%= modificacao.nome %>
-                                                    </td>
-                                                    <td class="alinharDireita">
-                                                      R$ <%= modificacao.valor %>
-                                                    </td>
-                                                  </tr>
-                                                  <% m++ %>
+                                                <table class="painelModificacao">
+                                                  <% painel.modificacoes.forEach(modificacao=> { %>
+  
+                                                    <tr>
+                                                      <td>
+                                                        <%= modificacao.nome %>
+                                                      </td>
+                                                      <td class="alinharDireita">
+                                                        R$ <%= (modificacao.valor).toFixed(2) %>
+                                                      </td>
+                                                      <td>
+                                                        <div class="col-md-2">
+                                                          <label class="container_radio"><span>o</span>
+                                                            <input type="radio" value="Mod-<%= modificacao._id %>" class="qt-mod" name="<%= modificacao.nome %>">
+                                                            <span class="checkmark"></span>
+                                                          </label>
+                                                        </div>
+                                                      </td>
+                                                    </tr>
+                                                    <% m++ %>
+  
+                                                  <% }) %>
+                                                </table>
 
-                                                    <% }) %>
-                                              </table>
+                                              <% } else { %>
+
+                                                <table class="painelModificacao">
+                                                  <% painel.modificacoes.forEach(modificacao=> { %>
+  
+                                                    <tr>
+                                                      <td class="col-md-5">
+                                                        <%= modificacao.nome %>
+                                                      </td>
+                                                      <td class="alinharDireita col-md-2">
+                                                        R$ <%= (modificacao.valor).toFixed(2) %>
+                                                      </td>
+                                                      <td class="col-md-1">
+                                                          <div class="adicionaModificacao">
+                                                            <input type="text" value="0" id="quantMod-<%= modificacao._id %>" name="<%= modificacao.nome %>">
+                                                        </div>
+                                                      </td>
+                                                    </tr>
+                                                    <% m++ %>
+  
+                                                  <% }) %>
+                                                </table>
+
+                                              <% } %>
+
+                                              
                                             </div>
 
                                           <% }) %>
@@ -116,13 +155,13 @@
                                               <div class="col-md-3">
                                                   <button type="reset" class="btn_1 outline full-width mb-mobile" data-dismiss="modal" aria-label="Fechar">Cancelar</button>
                                               </div>
-                                              <div class="col-md-7">
+                                              <div class="col-md-7 px-2">
                                                   <button type="reset" class="btn_1 full-width">Adicionar</button>
                                               </div>
                                               <div class="col-md-2">
                                                 <div class="numbers-row">
-                                                  <input type="text" value="1" id="qty_1" class="qty2 form-control" name="quantity">
-                                              </div>
+                                                  <input type="text" value="1" id="quantProduto-<%= produto._id %>" class="qty2 form-control" name="<%= produto.nome %>">
+                                                </div>
                                               </div>
                                           </div>
                                           <!-- /Row -->
@@ -151,27 +190,8 @@
       </div>
     </div>
   </div>
-  <!-- Não fechar o div, dá treta-->
-
-  <!-- <script type="text/javascript">
-
-function is_img(file) {
-	var img = new Image();
-	img.src = file;
-	img.onload = function() {
-		console.log("A imagem " + file + " existe");
-	}
-	img.onerror = function() {
-		console.log("A imagem " + file + " NAO existe");
-	}
-}
 
 
-produtos.forEach(produto => {
-  is_img("<%= imagemProduto %>");
-});
+<script>
 
-
-
-
-  </script> -->
+</script>
