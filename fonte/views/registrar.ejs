@@ -1,0 +1,328 @@
+<%- include ('../partials/header.ejs') %>
+
+<body>
+	<header class="header_in clearfix">
+		<div class="container">
+			<div class="layer"></div> <!-- Opacity Mask Menu Mobile -->
+			<!-- <ul id="top_menu">
+            <li><a href="wishlist.html" class="icon_cart_alt" title="Carrinho de compras"></a></li>
+          </ul> -->
+			<!-- /top_menu -->
+			<a href="#0" class="open_close">
+				<i class="icon_menu"></i><span>Menu</span>
+			</a>
+			<nav class="main-menu">
+				<div id="header_menu">
+					<a href="#0" class="open_close">
+						<i class="icon_close"></i><span>Menu</span>
+					</a>
+					<a href="index.html" id="nomeLoja" class="menu-loja text-center"></a>
+				</div>
+
+				<!-- MENU LATERAL -->
+				<ul>
+					<li class="submenu">
+						<a href="#0" class="show-submenu">Home</a>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="#0" class="show-submenu">Carrinho</a>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="#0" class="show-submenu">Meus Pedidos</a>
+						<ul>
+							<li class="third-level"><a href="#0">List pages</a>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="#0" class="show-submenu">Perfil</a>
+						<ul>
+							<li><a href="admin_section/index.html" target="_blank">Usuário</a></li>
+							<li><a href="404.html">Endereços</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main class="bg_gray">
+
+		<div class="container margin_60_20">
+			<div class="row justify-content-center">
+				<div class="col-xl-6 col-lg-8">
+					<div class="box_order_form">
+						<div class="head">
+							<div class="title">
+								<h3>Dados Pessoais</h3>
+							</div>
+						</div>
+						<!-- /head -->
+						<div class="main">
+						<!-- <form name="create-user" action="/user/create" method="POST"> -->
+						<form name= "create-user" id="cria-usuario" action="https://ms-controle-de-acesso.herokuapp.com/usuarios/adicionarUsuarioCompleto" method="POST" >
+							<div class="form-group">
+								<label for="nome-usuario">Nome</label>
+								<input class="form-control" name="nome" placeholder="Nome Completo" id="nome-usuario" maxlength="50" oninput="validarEntradas()">
+							</div>
+							<div class="form-group">
+								<label>Sexo</label><br>
+								<div class="row">
+									<label class="container_radio ml-3">Feminino
+										<input type="radio" name="type_d" value="fem">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio ml-3">Masculino
+										<input type="radio" name="type_d" value="masc">
+										<span class="checkmark"></span>
+									</label>
+									<label class="container_radio ml-3">Prefiro não informar
+										<input type="radio" name="type_d" checked="checked" value="s_sexo">
+										<span class="checkmark"></span>
+									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>RG</label>
+										<input class="form-control" name="rg" type="number" placeholder="xx.xxx.xxx-xx" id="rg-usuario">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>CPF</label>
+										<input class="form-control" name="cpf" type="number" placeholder="xxx.xxx.xxx-xx" id="cpf-usuario">
+									</div>
+								</div>
+							</div>
+							<div class=row>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Email</label>
+										<input class="form-control" name="email" type="email" placeholder="exemplo@email.com" id="email-usuario" oninput="validarEntradas()">
+									</div>
+								</div>					
+								<div class="col-md-6">
+									<div class="form-group" style="width: 50px">
+										<label>DDD</label>
+										<input class="form-control" type="text" placeholder="XX" maxlength="2" id="ddd-usuario" oninput="validarEntradas()">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Telefone</label>
+										<input class="form-control" name="telefone" type="tel" placeholder="99999-9999" id="telefone-usuario" oninput="validarEntradas()">
+									</div>
+								</div>
+							</div>												
+							<br>
+							<div class="form-group">
+								<label>Endereço</label>
+								<input class="form-control" name="endereco" type="text" placeholder="Rua Exemplo" id="rua-usuario" oninput="validarEntradas()">
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Bairro: </label>
+										<input class="form-control" name="bairro" type="text" placeholder="Centro" id="bairro-usuario" oninput="validarEntradas()">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Número: </label>
+										<input class="form-control" name="num_endereco" type="text" placeholder="123" id="numero-endereco" oninput="validarEntradas()">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Referência</label>
+										<input class="form-control" name="ref_endereco" type="text" placeholder="Em frente às quadras"
+											id="referencia-endereco">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+									  <label>Cidade</label>
+									  <input class="form-control" name="cidade" type="text" placeholder="Cidade" id="cidade-usuario" oninput="validarEntradas()">
+									</div>
+								  </div>
+								  <div class="col-md-4">
+									<div class="form-group">
+									  <label>UF</label>
+									  <input class="form-control" name="estado" type="text" placeholder="SP" id="estado-usuario" oninput="validarEntradas()">
+									</div>
+								  </div>
+								  <div class="col-md-4">
+									<div class="form-group">
+									  <label>CEP</label>
+									  <input class="form-control" name="cep" type="text" placeholder="00000-000" id="cep-usuario" oninput="validarEntradas()">
+									</div>
+								  </div>
+							</div>
+							<div class="col-md-8 mt-4">
+								<div class="form-group">
+									<label>Definir Senha</label>
+									<input class="form-control" type="password" id="senha-usuario" placeholder="Senha" oninput="validarEntradas()">
+									<input class="form-control mt-3" name="senha" type="password" id="confirmar-senha-usuario" placeholder="Confirme sua senha" oninput="validarEntradas()">									
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 mt-4">
+									<div class="form-group btn-block">										
+										<button class="form-control btn-cadastrar" id="botao-cadastro" disabled onclick="PostUsuario()">Cadastrar</button>
+									</div>
+								</div>
+							</div>
+							<br><br>
+							
+
+
+						</form>
+						</div>
+						<!-- /box_order_form -->
+					</div>
+					<!-- /col -->
+
+				</div>
+				<!-- /row -->
+			</div>
+
+	</main>
+
+	<%- include ('../partials/footer.ejs') %>
+	<!-- <script src="/fonte/scripts/criaUsuario.js"></script> -->
+	<script>
+
+		// form para da page registrar.ejs para adicionar event listener
+		var form = document.getElementById('cria-usuario');
+
+		// botão para submit das informações
+		var botao = document.getElementById('botao-cadastro')
+
+		// dados usuario 
+		var nome = document.getElementById('nome-usuario');
+		var rg = document.getElementById('rg-usuario');
+		var cpf = document.getElementById('cpf-usuario');
+		var email = document.getElementById('email-usuario');
+		var ddd = document.getElementById('ddd-usuario');
+		var numeroTelefone = document.getElementById('telefone-usuario');
+		var rua = document.getElementById('rua-usuario');
+		var bairro = document.getElementById('bairro-usuario');
+		var numero = document.getElementById('numero-endereco');
+		var referencia = document.getElementById('referencia-endereco');
+		var cidade = document.getElementById('cidade-usuario');
+		var estado = document.getElementById('estado-usuario');
+		var cep = document.getElementById('cep-usuario');
+		var senha = document.getElementById('senha-usuario');
+		var confirmarSenhaUsuario = document.getElementById('confirmar-senha-usuario');
+
+		// regex para validar email
+		var regex = /\S+@\S+\.\S+/;
+
+		function validarEntradas(){
+			
+			if 
+			(
+				nome.value.trim() !== ""
+			&&  regex.test(email.value) 
+			&&  ddd.value.trim() !== ""
+			&&  numeroTelefone.value.trim() !== ""
+			&&  rua.value.trim() !== ""
+			&&  numero.value.trim() !== ""
+			&&  cidade.value.trim() !== ""
+			&&  estado.value.trim() !== ""
+			&&  cep.value.trim() !== ""
+			&&  senha.value.trim() !== ""
+			&&  confirmarSenhaUsuario.value.trim() !== ""
+			&&  senha.value === confirmarSenhaUsuario.value
+			)
+			{
+				botao.disabled = false;
+			}    
+			else {
+				botao.disabled = true;
+			}
+		}
+
+		function CriaUsuario(){
+
+			var endereco = {
+				rua: rua.value,
+				numero: numero.value,
+				bairro: bairro.value,
+				cidade: cidade.value,
+				estado: estado.value,
+				cep: cep.value,
+				referencia: referencia.value,			
+			}
+
+			var telefone = {
+				tipo: "celular",
+				ddd: ddd.value,
+				numero: numeroTelefone.value
+			}
+
+			var documentos = {
+				cpf: cpf.value,
+				rg: rg.value
+			}
+
+			var u = {
+				nome: nome.value,
+				login: email.value,
+				senha: senha.value,
+				chaveAcesso: null,
+				endereco: endereco,
+				telefone: telefone,
+				documentos: documentos
+			}
+
+			return u;
+		}
+
+		function PostUsuario(){
+
+			// monta o "json" do usuario a ser mandado
+			var usuario = CriaUsuario();
+
+			// cria um POST request
+			var req = new XMLHttpRequest();
+			req.open("POST", "https://ms-controle-de-acesso.herokuapp.com/usuarios/adicionarUsuarioCompleto");
+			req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+			req.send(JSON.stringify(usuario));		
+		}
+
+		// async function CriaUsuario(){
+
+		// 	let usuario = {
+		// 		nome: nome.value.trim(),
+		// 		login: email.value.trim(),
+		// 		senha: senha.value.trim(),
+		// 		ativo: true
+		// 	}
+
+		// 	let res = await axios.post(usuariosURL, usuario);
+		// 	let dados = res.data;
+		// 	console.log(data);
+		// }
+
+		// form.addEventListener('submit', async function(event){
+		// 	// event.preventDefault();
+		// 	// console.log(event);
+		// 	await CriaUsuario();
+		// })
+
+	</script>
+</body>

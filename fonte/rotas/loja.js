@@ -6,6 +6,10 @@ lojaRotas.get('/error', (req, res) => {
     res.render('error404');
 })
 
+lojaRotas.get('/registrar', (req, res) => {
+    res.render('registrar');
+});
+
 lojaRotas.get('/:nomeLoja', async (req, res) => {
 
     try {
@@ -45,7 +49,7 @@ lojaRotas.get('/:nomeLoja', async (req, res) => {
         }
         res.redirect('/error');
     }
-})
+});
 
 lojaRotas.get('/pedido/:nomeLoja', async (req, res) => {
 
@@ -75,7 +79,6 @@ lojaRotas.get('/pedido/:nomeLoja', async (req, res) => {
             const telefones = usuarios[0].telefones;
 
             res.render('index', { loja: loja, links: links, categorias: categorias, produtos: produtos, usuarios: usuarios, enderecos: enderecos, telefones: telefones });
-
         }
     } catch (error) {
         if (error.response) {
@@ -110,11 +113,11 @@ lojaRotas.get('/', async (req, res) => {
 // USER ROUTES
 lojaRotas.get("/login", (req, res) => {
     res.render("login");
-})
+});
 
 lojaRotas.get("/rotateste", (req, res) => {
     res.render("login")
-})
+});
 
 lojaRotas.post("/user/create", (req, res) => {
 
@@ -135,7 +138,7 @@ lojaRotas.post("/user/create", (req, res) => {
 })
 lojaRotas.get('/userss/create', (req, res) => {
     res.render('registroUsuario');
-})
+});
 
 
 module.exports = lojaRotas;
